@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Fira Sans", sans-serif;
+}
+
+p {
+  color: #5a5d79;
+}
+
+.menu-wrapper {
+  @apply relative;
+}
+
+.menu-wrapper .menus {
+  @apply relative flex items-center max-lg:fixed max-lg:left-0 max-lg:top-24 max-lg:w-full max-lg:h-full max-lg:max-h-0 max-lg:items-start max-lg:flex-col max-lg:py-0 max-lg:overflow-y-auto max-lg:bg-white max-lg:transition-all max-lg:duration-300 max-lg:z-[999];
+}
+
+.menu-wrapper .menus.active {
+  @apply max-lg:max-h-[calc(100%-96px)] max-lg:py-5;
+}
+
+.menu-wrapper .menus .menu-item {
+  @apply relative select-none max-lg:block max-lg:w-full;
+}
+
+.menu-wrapper .menus .menu-item .menu-link {
+  @apply relative block py-7 px-5 text-sm font-medium transition-all duration-300 max-lg:py-3;
+}
+
+.menu-wrapper .menus .menu-item.has-submenu .menu-link {
+  @apply flex items-center justify-between;
+}
+
+.menu-wrapper .menus .menu-item.has-submenu .menu-link i {
+  @apply hidden max-lg:inline-block transition-all duration-300;
+}
+
+.menu-wrapper .menus .menu-item.has-submenu:hover .menu-link i {
+  @apply rotate-180;
+}
+
+.menu-wrapper .menus .menu-item.has-submenu .submenu {
+  @apply absolute top-full left-1/2 -translate-x-1/2 grid-flow-col grid-rows-5 lg:!grid gap-x-4 will-change-transform whitespace-nowrap p-5 bg-white shadow-full rounded-md overflow-hidden opacity-0 invisible transition-all duration-300 max-lg:relative max-lg:opacity-100 max-lg:visible max-lg:top-0 max-lg:shadow-none max-lg:max-h-0 max-lg:py-0 max-lg:bg-gray-50;
+}
+
+.menu-wrapper .menus .menu-item.has-submenu .submenu.is-sm {
+  @apply grid-flow-row grid-rows-none;
+}
+
+.menu-wrapper .menus .menu-item.has-submenu:hover .submenu {
+  @apply opacity-100 visible max-lg:max-h-full max-lg:py-0;
+}
+
+.menu-wrapper .menus .menu-item.has-submenu .submenu .submenu-item {
+  @apply relative block;
+}
+
+.menu-wrapper
+  .menus
+  .menu-item.has-submenu
+  .submenu
+  .submenu-item
+  .submenu-link {
+  @apply relative flex items-center gap-2 px-3 py-2.5 text-xs font-medium hover:text-primary hover:bg-slate-100 rounded-badge max-lg:hover:bg-transparent max-lg:rounded-none;
+}
+
+/* BUTTONS */
+.button {
+  @apply relative py-3 px-8 text-center text-sm;
+}
+
+.button.button-primary {
+  @apply bg-primary text-white rounded-badge shadow-inner;
+}
+
+.button.button-secondary {
+  @apply relative;
+}
+
+/* ANIMATIONS */
+.animate-fly {
+  animation: fly 6s cubic-bezier(0.75, 0.02, 0.31, 0.87) infinite;
+}
+
+@keyframes fly {
+  0%,
+  100% {
+    transform: translateY(5%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
