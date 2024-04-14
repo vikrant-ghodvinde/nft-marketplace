@@ -31,9 +31,12 @@ const Header = () => {
   }, []);
   return (
     <header
-      className={`w-full fixed top-0 left-0 py-7 lg:py-0 z-[999] ${
-        offset > 50 ? "backdrop-blur-lg" : ""
-      }`}
+      className={`w-full fixed top-0 left-0 py-4 lg:py-0 z-[999] ${
+        offset > 10
+          ? "before:absolute before:left-0 before:top-0 before:w-full before:h-full before:backdrop-blur-lg before:transition-all before:duration-300"
+          : "before:backdrop-blur-none"
+      }
+      ${menuToggle ? "bg-white" : ""} transition-all duration-300`}
     >
       <Container fluid>
         <div className="relative flex items-center justify-between gap-5">

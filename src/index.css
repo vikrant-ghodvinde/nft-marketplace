@@ -69,15 +69,72 @@ p {
 
 /* BUTTONS */
 .button {
-  @apply relative py-3 px-8 text-center text-sm;
+  @apply relative py-2 px-6 text-center font-semibold rounded-badge transition-all duration-300;
+}
+
+.button.button-sm {
+  @apply text-sm;
+}
+
+.button.button-lg {
+  @apply py-3 px-10;
 }
 
 .button.button-primary {
-  @apply bg-primary text-white rounded-badge shadow-inner;
+  @apply bg-primary text-white hover:bg-secondary;
+  --tw-shadow: 5px 5px 10px rgba(108, 106, 213, 0.25), inset 2px 2px 6px #a78df0,
+    inset -5px -5px 10px #6336e4;
+  --tw-shadow-colored: 5px 5px 10px var(--tw-shadow-color),
+    inset 2px 2px 6px var(--tw-shadow-color),
+    inset -5px -5px 10px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .button.button-secondary {
-  @apply relative;
+  @apply relative bg-white text-secondary;
+  --tw-shadow: 5px 5px 10px rgba(108, 106, 212, 0.25), inset 2px 2px 6px #eef1f9,
+    inset -5px -5px 10px #dfe3ef;
+  --tw-shadow-colored: 5px 5px 10px var(--tw-shadow-color),
+    inset 2px 2px 6px var(--tw-shadow-color),
+    inset -5px -5px 10px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.button.button-secondary:hover {
+  @apply bg-secondary text-white;
+  --tw-shadow: 5px 5px 10px rgba(108, 106, 213, 0.25), inset 2px 2px 6px #a78df0,
+    inset -5px -5px 10px #6336e4;
+  --tw-shadow-colored: 5px 5px 10px var(--tw-shadow-color),
+    inset 2px 2px 6px var(--tw-shadow-color),
+    inset -5px -5px 10px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* SWIPER CONFIGURATION */
+.swiper-button-prev,
+.swiper-button-next {
+  @apply w-10 h-10 border bg-white font-bold text-body hover:text-primary rounded-full;
+  --tw-shadow: 5px 5px 10px rgba(108, 106, 212, 0.25), inset 2px 2px 6px #eef1f9,
+    inset -5px -5px 10px #dfe3ef;
+  --tw-shadow-colored: 5px 5px 10px var(--tw-shadow-color),
+    inset 2px 2px 6px var(--tw-shadow-color),
+    inset -5px -5px 10px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  display: none;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 12px;
+  font-weight: bold;
 }
 
 /* ANIMATIONS */

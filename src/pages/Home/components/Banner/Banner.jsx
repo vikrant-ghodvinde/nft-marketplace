@@ -15,9 +15,13 @@ const Banner = () => {
                 The world&apos;s largest digital marketplace for crypto
                 collectibles and non-fungible tokens
               </p>
-              <div className="mt-5 flex items-center gap-3 flex-wrap justify-center md:justify-start">
-                <Link to="/" className="button button-primary">Upload</Link>
-                <Link to="/" className="button button-secondary">Explore</Link>
+              <div className="mt-10 flex items-center gap-3 flex-wrap justify-center md:justify-start">
+                <Link to="/" className="button button-lg button-primary shadow-primary-volume">
+                  Upload
+                </Link>
+                <Link to="/" className="button button-lg button-secondary shadow-white-volume">
+                  Explore
+                </Link>
               </div>
             </div>
           </div>
@@ -27,7 +31,7 @@ const Banner = () => {
                 <img
                   src="/assets/images/hero.jpg"
                   alt="banner"
-                  className="w-full h-full rounded-[170px]"
+                  className="w-full h-full max-sm:rounded-[100px] rounded-[170px]"
                 />
               </div>
               <img
